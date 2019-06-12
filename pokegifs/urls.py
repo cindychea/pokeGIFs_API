@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from pokegifs import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('pokemon/<str:id>', views.pokegif_show, name='pokegif_show'),
+    path('team/', views.pokegif_team, name='pokegif_team')
 ]
